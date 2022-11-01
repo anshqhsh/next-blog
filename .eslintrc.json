@@ -6,6 +6,7 @@
   },
   "parser": "babel-eslint",
   "extends": [
+    "next",
     "eslint:recommended",
     "plugin:react/recommended",
     "airbnb",
@@ -33,6 +34,8 @@
     "react/prefer-stateless-function": 0,
     "react/jsx-filename-extension": 0,
     "react/jsx-one-expression-per-line": 0,
-    "no-nested-ternary": 0
+    "no-nested-ternary": 0,
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off"
   }
 }

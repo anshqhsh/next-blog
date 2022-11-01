@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 export default function Csr() {
-  const [time, setTime] = useState();
+  const [time, setTime] = useState<any>();
   useEffect(() => {
     setTime(new Date().toISOString());
     console.log('here');
@@ -20,6 +20,7 @@ export default function Csr() {
       </Head>
 
       <main className={styles.main}>
+        <h1>CSR</h1>
         <h1 className={styles.title}>{time}</h1>
       </main>
       <Button variant={'contained'}>Contained</Button>
