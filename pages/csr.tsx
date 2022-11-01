@@ -2,16 +2,15 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { Button } from '@mui/material';
-import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
-export async function getServerSideProps() {
-  console.log('server?');
-  return {
-    props: { time: new Date().toISOString() },
-  };
-}
+export default function Csr() {
+  const [time, setTime] = useState();
+  useEffect(() => {
+    setTime(new Date().toISOString());
+    console.log('here');
+  }, []);
 
-export default function Home({ time }: { time: string }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -21,9 +20,6 @@ export default function Home({ time }: { time: string }) {
       </Head>
 
       <main className={styles.main}>
-        <h1>
-          <Link href={'/csr'}>CSR 로</Link>
-        </h1>
         <h1 className={styles.title}>{time}</h1>
       </main>
       <Button variant={'contained'}>Contained</Button>
