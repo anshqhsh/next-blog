@@ -1,12 +1,10 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { CssBaseline } from '@mui/material';
+import Layout from '../components/Layout';
+import { ReactNode } from 'react';
 
 export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <CssBaseline />
-      <Component {...pageProps} />
-    </>
-  );
+  // @ts-ignore
+  const getLayout = Component.getLayout || ((page: ReactNode) => <Layout>{page}</Layout>);
+  return getLayout(<Component {...pageProps} />);
 }

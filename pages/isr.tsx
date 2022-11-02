@@ -4,21 +4,23 @@ import Layout from '../components/Layout';
 import SubLayout from '../components/SubLayout';
 
 export async function getStaticProps() {
-  console.log('server?');
+  console.log('Isr?');
   return {
     props: { time: new Date().toISOString() },
+    revalidate: 1,
   };
 }
 
-export default function Ssg({ time }: any) {
+export default function Isr({ time }: any) {
   return (
     <>
-      <h1>SSG</h1>
+      <h1>ISR</h1>
       <h1 className={styles.title}>{time}</h1>
     </>
   );
 }
-Ssg.getLayout = function getLayout(page: ReactNode) {
+
+Isr.getLayout = function getLayout(page: ReactNode) {
   return (
     <Layout>
       <SubLayout>{page}</SubLayout>
