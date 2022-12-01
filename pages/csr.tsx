@@ -13,6 +13,7 @@ export default function Csr() {
   return (
     <>
       <h1>CSR</h1>
+
       <h1 className={styles.title}>{time}</h1>
     </>
   );

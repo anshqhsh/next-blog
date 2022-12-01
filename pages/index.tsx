@@ -1,5 +1,6 @@
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export async function getServerSideProps() {
   console.log('SSR?');
@@ -22,6 +23,7 @@ export default function Home({ time }: { time: string }) {
           <Link href={'/isr'}>ISR 로</Link>
         </h1>
         <h1 className={styles.title}>{time}</h1>
+        <Image src={'/images/somi.png'} width={140} height={200} alt="som"></Image>
       </main>
     </>
   );
