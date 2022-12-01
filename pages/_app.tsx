@@ -1,10 +1,16 @@
-import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import Layout from '../components/Layout';
 import { ReactNode } from 'react';
+import PageLoadingProgress from 'components/PageLoadingProgress/PageLoadingProgress';
+import 'styles/main.scss';
+import DefaultLayout from 'layouts/default';
 
 export default function App({ Component, pageProps }: AppProps) {
   // @ts-ignore
-  const getLayout = Component.getLayout || ((page: ReactNode) => <Layout>{page}</Layout>);
-  return getLayout(<Component {...pageProps} />);
+  const getLayout = Component.getLayout || ((page: ReactNode) => page);
+  return getLayout(
+    <DefaultLayout>
+      <PageLoadingProgress />
+      <Component {...pageProps} />
+    </DefaultLayout>,
+  );
 }

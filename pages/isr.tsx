@@ -1,7 +1,7 @@
-import styles from '../styles/Home.module.css';
+import 'styles/Home.module.scss';
 import { ReactNode } from 'react';
-import Layout from '../components/Layout';
-import SubLayout from '../components/SubLayout';
+import SubLayout from '../src/components/SubLayout';
+import DefaultLayout from 'layouts/default';
 
 export async function getStaticProps() {
   console.log('Isr?');
@@ -15,15 +15,15 @@ export default function Isr({ time }: any) {
   return (
     <>
       <h1>ISR</h1>
-      <h1 className={styles.title}>{time}</h1>
+      {/* <h1 className={styles.title}>{time}</h1> */}
     </>
   );
 }
 
 Isr.getLayout = function getLayout(page: ReactNode) {
   return (
-    <Layout>
+    <DefaultLayout>
       <SubLayout>{page}</SubLayout>
-    </Layout>
+    </DefaultLayout>
   );
 };

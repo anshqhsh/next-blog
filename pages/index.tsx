@@ -1,4 +1,4 @@
-import styles from '../styles/Home.module.css';
+// import 'styles/main.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -12,7 +12,7 @@ export async function getServerSideProps() {
 export default function Home({ time }: { time: string }) {
   return (
     <>
-      <main className={styles.main}>
+      <main>
         <h1>
           <Link href={'/csr'}>CSR 로</Link>
         </h1>
@@ -22,7 +22,7 @@ export default function Home({ time }: { time: string }) {
         <h1>
           <Link href={'/isr'}>ISR 로</Link>
         </h1>
-        <h1 className={styles.title}>{time}</h1>
+
         <Image src={'/images/somi.png'} width={140} height={200} alt="som"></Image>
       </main>
     </>

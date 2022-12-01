@@ -1,7 +1,9 @@
-import styles from '../styles/Home.module.css';
+// import styles from '../styles/Home.module.css';
 import { ReactNode, useEffect, useState } from 'react';
-import Layout from '../components/Layout';
-import SubLayout from '../components/SubLayout';
+
+import SubLayout from '../src/components/SubLayout';
+
+import DefaultLayout from 'layouts/default';
 
 export default function Csr() {
   const [time, setTime] = useState<string>();
@@ -13,16 +15,14 @@ export default function Csr() {
   return (
     <>
       <h1>CSR</h1>
-
-      <h1 className={styles.title}>{time}</h1>
     </>
   );
 }
 
 Csr.getLayout = function getLayout(page: ReactNode) {
   return (
-    <Layout>
+    <DefaultLayout>
       <SubLayout>{page}</SubLayout>
-    </Layout>
+    </DefaultLayout>
   );
 };
