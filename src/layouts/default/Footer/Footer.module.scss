@@ -1,15 +1,17 @@
-@import 'styles/variables.scss';
+@import 'styles/constant/levels';
+@import 'styles/constant/colors';
+@import 'styles/constant/breakpoint';
 
 .footer {
-  background: $color-black;
   padding: 20px;
-  color: $color-white;
+  color: $WHITE;
+  background: $BLACK;
 
   .inner {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
 
   nav {
@@ -18,9 +20,9 @@
     justify-content: flex-end;
 
     a {
-      color: $color-white;
-      text-decoration: none;
       margin-left: 40px;
+      color: $WHITE;
+      text-decoration: none;
       transition: color 0.2s;
 
       &:first-child {
@@ -28,22 +30,22 @@
       }
 
       &:hover {
-        color: $color-link;
+        color: $HOVER;
       }
 
       &.active {
+        color: $WHITE;
         opacity: 0.5;
-        color: $color-white;
       }
     }
   }
 
   .copy {
-    opacity: 0.5;
     font-size: 14px;
+    opacity: 0.5;
   }
 
-  @media (max-width: $breakpoint-mobile) {
+  @media (max-width: $MOBILE) {
     .inner {
       flex-direction: column-reverse;
       text-align: center;

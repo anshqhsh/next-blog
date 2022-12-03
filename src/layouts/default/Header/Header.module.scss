@@ -1,36 +1,36 @@
-@import 'styles/variables.scss';
+@import 'styles/constant/levels';
+@import 'styles/constant/colors';
+@import 'styles/constant/breakpoint';
 
 .header {
   padding: 20px;
-  border-bottom: 1px solid $color-ruler;
+  border-bottom: 1px solid $BORDER;
 
   .inner {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
 
   nav {
     display: flex;
 
     a {
-      color: $color-text;
+      margin-left: 30px;
       text-decoration: none;
       transition: color 0.2s;
-      margin-left: 30px;
 
       &:first-child {
         margin-left: 0;
       }
 
       &:hover {
-        color: $color-link;
+        color: $HOVER;
       }
 
       &.active {
         opacity: 0.5;
-        color: $color-text;
       }
     }
   }
@@ -39,43 +39,43 @@
     display: none;
   }
 
-  @media (max-width: $breakpoint-mobile) {
+  @media (max-width: $MOBILE) {
     .hamburger {
+      z-index: $DROPDOWN;
       display: flex;
-      z-index: $z-index-nav-overlay;
     }
 
     nav {
       position: fixed;
-      left: 0;
       top: 0;
+      left: 0;
+      z-index: $DROPDOWN;
+      box-sizing: border-box;
+      flex-direction: column;
       width: 100%;
       height: 100%;
-      opacity: 0;
-      pointer-events: none;
-      flex-direction: column;
       padding: 40px 0;
-      box-sizing: border-box;
-      backdrop-filter: blur(5px);
-      background: rgba($color-mobile-nav, 0);
+      pointer-events: none;
+      background: rgba($WHITE, 0);
+      opacity: 0;
       transition: opacity 0.2s, background 0.5s;
-      z-index: $z-index-nav-overlay;
+      backdrop-filter: blur(5px);
 
       a {
-        text-align: center;
         width: 100%;
-        line-height: 70px;
         margin: 0;
         font-size: 18px;
-        transform: translateY(-10px);
+        line-height: 70px;
+        text-align: center;
         transition: transform 0.6s;
+        transform: translateY(-10px);
       }
     }
 
     &.open nav {
-      opacity: 1;
       pointer-events: all;
-      background: $color-mobile-nav;
+      background: $WHITE;
+      opacity: 1;
 
       a {
         transform: translateY(0);
