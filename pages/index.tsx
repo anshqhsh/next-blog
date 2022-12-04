@@ -5,7 +5,7 @@ import Image from 'next/image';
 export async function getServerSideProps() {
   console.log('SSR?');
   return {
-    props: { time: new Date().toISOString() },
+    props: { time: new Date().toISOString() }
   };
 }
 
@@ -23,7 +23,12 @@ export default function Home({ time }: { time: string }) {
           <Link href={'/isr'}>ISR 로</Link>
         </h1>
 
-        <Image src={'/images/somi.png'} width={140} height={200} alt="som"></Image>
+        <Image
+          src={'/images/somi.png'}
+          width={140}
+          height={200}
+          alt="som"
+        ></Image>
       </main>
     </>
   );

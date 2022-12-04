@@ -40,6 +40,7 @@
     "prettier"
   ],
   "rules": {
+    "no-undef": "off",
     "react/prefer-stateless-function": 0,
     "no-nested-ternary": 0,
     "react/no-unescaped-entities": "off",

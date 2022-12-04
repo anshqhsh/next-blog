@@ -14,15 +14,13 @@ export default function Csr() {
 
   return (
     <>
-      <h1>CSR</h1>
+      <SubLayout>
+        <h1>CSR</h1>
+      </SubLayout>
     </>
   );
 }
 
 Csr.getLayout = function getLayout(page: ReactNode) {
-  return (
-    <DefaultLayout>
-      <SubLayout>{page}</SubLayout>
-    </DefaultLayout>
-  );
+  return page;
 };
